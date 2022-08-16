@@ -1,5 +1,6 @@
 using System;
 using cSharpSillyBot.Commands;
+using cSharpSillyBot.EventHandler;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
@@ -40,7 +41,7 @@ namespace cSharpSillyBot {
             };
 
             Commands = Client.UseCommandsNext(commandsConfig);
-
+            Client.MessageCreated += Handler.MessageHandler; 
             Commands.RegisterCommands<Basics>();
             Commands.RegisterCommands<MainCommands>();
             
