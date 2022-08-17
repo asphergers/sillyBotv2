@@ -45,6 +45,7 @@ namespace cSharpSillyBot.Commands {
                 });
             }
 
+            await ctx.Message.Channel.SendMessageAsync($"sender: {ctx.User}");
             await ctx.Message.Channel.SendMessageAsync($"fxtoggle: {Program._map[ctx.Guild.Id].Fx_Twitter}");
         }
     }
